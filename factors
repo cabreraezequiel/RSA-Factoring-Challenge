@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-
+# Factorize as many numbers as possible into a product of two smaller numbers
 import sys
-#from sympy import *
 
 
 with open(sys.argv[1], "r", encoding="utf-8") as f:
@@ -11,6 +10,5 @@ with open(sys.argv[1], "r", encoding="utf-8") as f:
         n = int(line)
         for i in range(2, n):
             if n % i == 0:
-                break;
-
+                break
         print(f"{n}={int(n/i)}*{i}")
