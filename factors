@@ -1,0 +1,17 @@
+#!/usr/bin/python3
+
+import sys
+from sympy import *
+
+
+with open(sys.argv[1], "r", encoding="utf-8") as f:
+    lines = f.readlines()
+
+    for line in lines:
+        n = int(line)
+        for i in range(2, n):
+            if n % i == 0:
+                if sympy.isprime(i) and sympy.isprime(int(n/i)):
+                    break;
+
+        print(f"{n}={int(n/i)}*{i}")
